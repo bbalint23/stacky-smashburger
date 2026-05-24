@@ -130,7 +130,7 @@ export function ContactSection() {
               
               <div className="flex-grow min-h-[300px] relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.04487005869723!2d21.715851251869314!3d47.94840011346255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47389fc12eb206fd%3A0x8627f4091cb6a8f3!2sNy%C3%ADregyh%C3%A1za%2C%20Szarvas%20u.%2040%2C%204400!5e0!3m2!1sen!2shu!4v1778312486543!5m2!1sen!2shu"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.530232789969!2d21.715025176823058!3d47.95817996363293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47389fbd9b50b587%3A0x21fe4d778c1c0662!2zS29yesOz!5e1!3m2!1sen!2shu!4v1779605662179!5m2!1sen!2shu"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
