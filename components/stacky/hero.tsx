@@ -18,25 +18,19 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center lg:text-left"
           >
-            {/* BADGE - Nyíregyháza */}
+            {/* BADGE */}
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary mb-6">
               <MapPin className="h-3.5 w-3.5" />
               Nyíregyháza, belváros
             </div>
 
-            {/* FŐCÍM - Optimalizált all-caps méretekkel */}
+            {/* FŐCÍM: Letisztult, sallangmentes, monumentális */}
             <h1 className="leading-[1.1] text-secondary">
-              {/* STACKY - A nagy, egyedi fókuszpont */}
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-luckiest uppercase tracking-wide text-primary">
+              <span className="text-6xl sm:text-7xl lg:text-8xl font-luckiest uppercase tracking-wide text-primary block">
                 STACKY
               </span>
-              <br />
-              {/* SMASHBURGERS & MORE - Kisebb, finomabb, all-caps blokk */}
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-sans font-black tracking-tight block mt-3">
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-sans font-black tracking-tight block mt-2 text-secondary">
                 SMASHBURGERS
-              </span>
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-sans font-black tracking-tight block text-secondary/80">
-                & MORE
               </span>
             </h1>
             
@@ -46,7 +40,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-6 text-lg sm:text-xl text-secondary/70 max-w-lg mx-auto lg:mx-0 font-light"
             >
-              Smashburger úgy, ahogy kell. Dupla marhahús, ropogós szélek, olvadós sajt.
+              Smashburger úgy, ahogy kell. Dupla marhahús, ropogós szélek, olvadós sajt és brutális fullos burgonyák.
             </motion.p>
 
             {/* GOMBOK */}
@@ -58,7 +52,7 @@ export function Hero() {
             >
               <Link
                 href="#menu"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#22c55e] px-7 py-4 text-base font-bold text-white shadow-lg shadow-[#22c55e]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#22c55e]/50 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#22c55e] px-7 py-4 text-base font-bold text-white shadow-lg shadow-[#22c55e]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#22c55e]/50 active:scale-95 w-full sm:w-auto"
               >
                 Irány az étlap
                 <ArrowDown className="w-4 h-4" />
@@ -66,30 +60,22 @@ export function Hero() {
 
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-secondary/10 bg-transparent px-7 py-4 text-base font-bold text-secondary transition-all duration-300 hover:-translate-y-1 hover:bg-secondary/5 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-secondary/10 bg-transparent px-7 py-4 text-base font-bold text-secondary transition-all duration-300 hover:-translate-y-1 hover:bg-secondary/5 active:scale-95 w-full sm:w-auto"
               >
                 Kapcsolat
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* JOBB OLDAL: FINOMAN LEBEGŐ KÉP */}
+          {/* JOBB OLDAL: KÉP */}
           <div className="relative flex justify-center lg:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ 
-                opacity: 1, 
-                scale: 1,
-                y: [0, -15, 0]
-              }}
+              animate={{ opacity: 1, scale: 1, y: [0, -15, 0] }}
               transition={{
                 opacity: { duration: 0.8, delay: 0.4 },
                 scale: { duration: 0.8, delay: 0.4 },
-                y: {
-                  repeat: Infinity,
-                  duration: 4,
-                  ease: "easeInOut"
-                }
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
               }}
               className="relative w-full max-w-md lg:max-w-lg aspect-square select-none"
             >
@@ -115,10 +101,7 @@ export function Hero() {
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
           <ArrowDown className="w-5 h-5 text-secondary/40" />
         </motion.div>
       </motion.div>

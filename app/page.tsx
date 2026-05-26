@@ -28,7 +28,7 @@ export default function Home() {
             STACKY
           </h1>
           <p className="mt-2 font-space-grotesk text-[#fff5ec]/80 text-xs md:text-sm tracking-[0.15em] uppercase font-bold">
-            Smashburgers & more
+            Smashburgers
           </p>
           <p className="mt-4 font-space-grotesk text-[#fff5ec]/60 text-sm md:text-base tracking-[0.2em] uppercase">
             Nyíregyháza, belváros // HAMAROSAN

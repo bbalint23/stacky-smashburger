@@ -24,7 +24,7 @@ const luckiestGuy = Luckiest_Guy({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://stackyburger.hu'),
-  title: 'STACKY Smashburgers & more | Nyíregyháza',
+  title: 'STACKY Smashburgers | Nyíregyháza',
   description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre!',
   keywords: [
     'smash burger',
@@ -36,8 +36,10 @@ export const metadata: Metadata = {
     'smashburger nyíregyháza',
     'smash burger nyíregyháza',
     'STACKY',
+    'classic burger nyíregyháza',
+    'oklahoma burger nyíregyháza',
     'stacky nyíregyháza',
-    'ebéd rendelés nyíregyháza',
+    'loaded fries nyíregyháza',
     'vacsora Nyíregyháza'
   ],
   robots: 'index, follow',
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: 'STACKY Smashburgers & more | Nyíregyháza',
+    title: 'STACKY Smashburgers | Nyíregyháza',
     description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre!',
     url: 'https://stackyburger.hu',
     siteName: 'STACKY',
@@ -76,7 +78,7 @@ function RestaurantSchema() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    "name": "STACKY Smashburgers & more",
+    "name": "STACKY Smashburgers",
     "image": "https://stackyburger.hu/opengraph-image.jpg",
     "priceRange": "$$",
     "servesCuisine": "American, Smash Burger",
@@ -105,41 +107,21 @@ function RestaurantSchema() {
           "itemListElement": [
             {
               "@type": "MenuItem",
-              "name": "STACKY burger",
-              "description": "burgonyás buci, dupla marhahús, dupla cheddar, STACKY black jam, jalapeño, STACKY szósz",
-              "offers": {
-                "@type": "Offer",
-                "price": "3290",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Bacon burger",
-              "description": "briós buci, dupla marhahús, cheddar, bacon, savanyú uborka, baconnaise",
-              "offers": {
-                "@type": "Offer",
-                "price": "3090",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Oklahoma burger",
-              "description": "burgonyás buci, dupla marhahús, cheddar, sült hagyma, savanyú uborka, mustár",
-              "offers": {
-                "@type": "Offer",
-                "price": "2890",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Classic burger",
-              "description": "burgonyás buci, dupla marhahús, cheddar, savanyú uborka, mustár",
+              "name": "Classic Burger",
+              "description": "burgonyás buci, dupla marhahús, amerikai sajt, savanyú uborka, sárga mustár",
               "offers": {
                 "@type": "Offer",
                 "price": "2790",
+                "priceCurrency": "HUF"
+              }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Oklahoma Burger",
+              "description": "burgonyás buci, dupla marhahús, amerikai sajt, sült hagyma, savanyú uborka, sárga mustár",
+              "offers": {
+                "@type": "Offer",
+                "price": "2890",
                 "priceCurrency": "HUF"
               }
             }
@@ -147,77 +129,48 @@ function RestaurantSchema() {
         },
         {
           "@type": "MenuSection",
-          "name": "Snackek & Köretek",
+          "name": "Extra",
+          "itemListElement": [
+            { "@type": "MenuItem", "name": "Marhahús húsfeltét", "offers": { "@type": "Offer", "price": "890", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Amerikai sajt feltét", "offers": { "@type": "Offer", "price": "350", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Bacon feltét", "offers": { "@type": "Offer", "price": "300", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Jalapeño feltét", "offers": { "@type": "Offer", "price": "250", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Coleslaw saláta", "offers": { "@type": "Offer", "price": "790", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Stacky szósz", "offers": { "@type": "Offer", "price": "500", "priceCurrency": "HUF" } }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Burgonya",
           "itemListElement": [
             {
               "@type": "MenuItem",
               "name": "Fűszeres burgonya",
               "offers": {
                 "@type": "Offer",
-                "price": "890",
+                "price": "790",
                 "priceCurrency": "HUF"
               }
             },
             {
               "@type": "MenuItem",
               "name": "Fullos burgonya",
-              "description": "burgonya, STACKY black jam, bacon, jalapeño, cheddar, STACKY szósz",
+              "description": "burgonya, STACKY BLACK JAM, bacon, jalapeño, STACKY SZÓSZ",
               "offers": {
                 "@type": "Offer",
-                "price": "2490",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Jalapeño poppers",
-              "description": "sajttal töltött, bundázott jalapeño",
-              "offers": {
-                "@type": "Offer",
-                "price": "1990",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Chicken strips",
-              "description": "bundázott csirkemellcsíkok",
-              "offers": {
-                "@type": "Offer",
-                "price": "1690",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Buffalo falatok",
-              "description": "bundázott, csípős csirkefalatkák, STACKY szósszal",
-              "offers": {
-                "@type": "Offer",
-                "price": "1990",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Hagymakarikák",
-              "description": "bundázott hagymakarikák",
-              "offers": {
-                "@type": "Offer",
-                "price": "890",
-                "priceCurrency": "HUF"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Coleslaw",
-              "description": "házi, majonézes káposztasaláta",
-              "offers": {
-                "@type": "Offer",
-                "price": "790",
+                "price": "2390",
                 "priceCurrency": "HUF"
               }
             }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Üdítők",
+          "itemListElement": [
+            { "@type": "MenuItem", "name": "Coca-Cola", "offers": { "@type": "Offer", "price": "690", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Fanta", "offers": { "@type": "Offer", "price": "690", "priceCurrency": "HUF" } },
+            { "@type": "MenuItem", "name": "Sprite", "offers": { "@type": "Offer", "price": "690", "priceCurrency": "HUF" } }
           ]
         }
       ]
