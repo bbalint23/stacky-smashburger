@@ -6,7 +6,7 @@ import { Flame } from "lucide-react";
 import Image from "next/image";
 
 const monthlyBurger = {
-  isActive: true,
+  isActive: false,
   name: "BEKONY BOMB SMASH",
   description:
     "szkibidi szkibidi, szkibidi szkibidi yeah oh yeah szkibidi, igen szkibidi. szkibidi szkibidi, szkibidi szkibidi yeah oh yeah szkibidi, igen szkibidi.",

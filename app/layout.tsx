@@ -24,8 +24,8 @@ const luckiestGuy = Luckiest_Guy({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://stackyburger.hu'),
-  title: 'STACKY Smashburgers | Nyíregyháza',
-  description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre!',
+  title: 'STACKY DELI | Nyíregyháza',
+  description: 'Szaftos Angus smashburgerek, argentin rib-eye cheesesteak, csöpögős chopped cheese és ropogós burgonya Nyíregyházán. Keresd a STACKY DELI-t a Derű utcában!',
   keywords: [
     'smash burger',
     'Nyíregyháza burger',
@@ -36,11 +36,19 @@ export const metadata: Metadata = {
     'smashburger nyíregyháza',
     'smash burger nyíregyháza',
     'STACKY',
+    'DELI',
+    'STACKY DELI',
+    'STACKY Smash and Sandwich',
+    'stacky nyíregyháza',
     'classic burger nyíregyháza',
     'oklahoma burger nyíregyháza',
-    'stacky nyíregyháza',
     'loaded fries nyíregyháza',
-    'vacsora Nyíregyháza'
+    'vacsora Nyíregyháza',
+    'cheesesteak nyíregyháza',
+    'kertváros étterem nyíregyháza',
+    'prémium szendvics nyíregyháza',
+    'angus burger nyíregyháza',
+    'meleg szendvics nyíregyháza'
   ],
   robots: 'index, follow',
   generator: 'v0.app',
@@ -56,8 +64,8 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: 'STACKY Smashburgers | Nyíregyháza',
-    description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre!',
+    title: 'STACKY DELI | Nyíregyháza',
+    description: 'Szaftos Angus smashburgerek, argentin rib-eye cheesesteak, csöpögős chopped cheese és ropogós burgonya Nyíregyházán. Keresd a STACKY DELI-t a Derű utcában!',
     url: 'https://stackyburger.hu',
     siteName: 'STACKY',
     images: [
@@ -65,7 +73,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'STACKY Smashburgers kínálata',
+        alt: 'STACKY DELI kínálata',
       },
     ],
     locale: 'hu_HU',
@@ -78,14 +86,15 @@ function RestaurantSchema() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    "name": "STACKY Smashburgers",
+    "name": "STACKY DELI",
     "image": "https://stackyburger.hu/opengraph-image.jpg",
     "priceRange": "$$",
-    "servesCuisine": "American, Smash Burger",
+    "paymentAccepted": "Cash, Credit Card",
+    "servesCuisine": "American, Smash Burger, Beef, Sandwich, NY Chopped cheese, Philly Cheesesteak, fries, sauce",
 
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "KORZÓ 000",
+      "streetAddress": "Derű utca 20",
       "addressLocality": "Nyíregyháza",
       "postalCode": "4400",
       "addressCountry": "HU"
@@ -93,35 +102,60 @@ function RestaurantSchema() {
 
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 47.95823879533337,
-      "longitude": 21.717593480377648
+      "latitude": 47.956899,
+      "longitude": 21.689940
     },
-
+"openingHoursSpecification": [
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+    "opens": "11:30",
+    "closes": "20:30"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Friday",
+    "opens": "11:30",
+    "closes": "21:30"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Saturday",
+    "opens": "16:00",
+    "closes": "21:30"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Sunday",
+    "opens": "16:00",
+    "closes": "20:00"
+  }
+],
     "hasMenu": {
       "@type": "Menu",
-      "name": "Stacky Menü",
+      "name": "STACKY DELI Menü",
       "hasMenuSection": [
         {
           "@type": "MenuSection",
-          "name": "Burgerek",
+          "name": "Smashburger",
           "itemListElement": [
             {
               "@type": "MenuItem",
-              "name": "Classic Burger",
-              "description": "burgonyás buci, dupla marhahús, amerikai sajt, savanyú uborka, sárga mustár",
+              "name": "Classic Smash",
+              "description": "burgonyás buci, 160g Angus marhahús, amerikai sajt, savanyú uborka, STACKY SZÓSZ",
               "offers": {
                 "@type": "Offer",
-                "price": "2790",
+                "price": "2990",
                 "priceCurrency": "HUF"
               }
             },
             {
               "@type": "MenuItem",
-              "name": "Oklahoma Burger",
-              "description": "burgonyás buci, dupla marhahús, amerikai sajt, sült hagyma, savanyú uborka, sárga mustár",
+              "name": "Oklahoma Smash",
+              "description": "burgonyás buci, 160g Angus marhahús, amerikai sajt, sült hagyma, savanyú uborka, mustár",
               "offers": {
                 "@type": "Offer",
-                "price": "2890",
+                "price": "2990",
                 "priceCurrency": "HUF"
               }
             }
@@ -129,48 +163,78 @@ function RestaurantSchema() {
         },
         {
           "@type": "MenuSection",
-          "name": "Extra",
+          "name": "Burger Combo",
           "itemListElement": [
-            { "@type": "MenuItem", "name": "Marhahús húsfeltét", "offers": { "@type": "Offer", "price": "890", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Amerikai sajt feltét", "offers": { "@type": "Offer", "price": "350", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Bacon feltét", "offers": { "@type": "Offer", "price": "300", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Jalapeño feltét", "offers": { "@type": "Offer", "price": "250", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Coleslaw saláta", "offers": { "@type": "Offer", "price": "790", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Stacky szósz", "offers": { "@type": "Offer", "price": "500", "priceCurrency": "HUF" } }
+            {
+              "@type": "MenuItem",
+              "name": "Single Combo (Classic/Oklahoma)",
+              "description": "1x BURGER, 1x BURGONYA",
+              "offers": {
+                "@type": "Offer",
+                "price": "3590",
+                "priceCurrency": "HUF"
+              }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Double Combo (Classic/Oklahoma)",
+              "description": "BURGER x2, BURGONYA x2",
+              "offers": {
+                "@type": "Offer",
+                "price": "6990",
+                "priceCurrency": "HUF"
+              }
+            }
           ]
         },
         {
           "@type": "MenuSection",
-          "name": "Burgonya",
+          "name": "Sandwich",
+          "itemListElement": [
+            {
+              "@type": "MenuItem",
+              "name": "Philly Cheesesteak",
+              "description": "burgonyás roll, 130g ARGENTIN RIB-EYE steak, amerikai sajt, sült hagyma, majonéz",
+              "offers": {
+                "@type": "Offer",
+                "price": "4690",
+                "priceCurrency": "HUF"
+              }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "NY Chopped Cheese",
+              "description": "burgonyás roll, 160g Angus marhahús, amerikai sajt, sült hagyma, saláta, paradicsom, Stacky szósz",
+              "offers": {
+                "@type": "Offer",
+                "price": "3590",
+                "priceCurrency": "HUF"
+              }
+            },
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Side",
           "itemListElement": [
             {
               "@type": "MenuItem",
               "name": "Fűszeres burgonya",
               "offers": {
                 "@type": "Offer",
-                "price": "790",
+                "price": "890",
                 "priceCurrency": "HUF"
               }
             },
             {
               "@type": "MenuItem",
-              "name": "Fullos burgonya",
-              "description": "burgonya, STACKY BLACK JAM, bacon, jalapeño, STACKY SZÓSZ",
+              "name": "Stacky szósz",
               "offers": {
                 "@type": "Offer",
-                "price": "2390",
+                "price": "450",
                 "priceCurrency": "HUF"
               }
             }
-          ]
-        },
-        {
-          "@type": "MenuSection",
-          "name": "Üdítők",
-          "itemListElement": [
-            { "@type": "MenuItem", "name": "Coca-Cola", "offers": { "@type": "Offer", "price": "690", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Fanta", "offers": { "@type": "Offer", "price": "690", "priceCurrency": "HUF" } },
-            { "@type": "MenuItem", "name": "Sprite", "offers": { "@type": "Offer", "price": "690", "priceCurrency": "HUF" } }
           ]
         }
       ]

@@ -124,13 +124,13 @@ export function ContactSection() {
               <div className="p-4 border-b border-secondary/10 flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 <p className="text-xs text-secondary/70 font-medium uppercase tracking-widest">
-                  4400 Nyíregyháza, xx utca
+                  4400 Nyíregyháza, Derű utca 20.
                 </p>
               </div>
               
               <div className="flex-grow min-h-[300px] relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.530232789969!2d21.715025176823058!3d47.95817996363293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47389fbd9b50b587%3A0x21fe4d778c1c0662!2zS29yesOz!5e1!3m2!1sen!2shu!4v1779605662179!5m2!1sen!2shu"
+                  src="https://www.google.com/maps/embed?pb=!4v1784474786291!6m8!1m7!1sZfSJWk666ckAXS1fmKfwCA!2m2!1d47.95712864123738!2d21.68997752627413!3f192.50042764144655!4f-0.9988282847358505!5f0.7820865974627469"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
