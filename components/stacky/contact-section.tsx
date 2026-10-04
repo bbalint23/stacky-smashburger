@@ -30,10 +30,10 @@ export function ContactSection() {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl mb-4">
-            <MessageSquare className="w-4 h-4" />
-            <span className="text-sm font-medium uppercase tracking-wider">Kapcsolat</span>
+            <MessageSquare className="w-4 h-4 text-primary" />
+            <span className="text-sm font-bold uppercase tracking-wider text-primary">Kapcsolat</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">
             Kérdésed van? Írj nekünk!
           </h2>
         </motion.div>
@@ -46,8 +46,8 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 p-6 sm:p-8 border border-secondary/10 h-full">
-              <h3 className="text-lg font-medium text-secondary mb-6">Üzenet küldése</h3>
+            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 p-6 sm:p-8 border border-secondary/15 h-full">
+              <h3 className="text-xl font-bold text-primary mb-6">Üzenet küldése</h3>
               
               {isSubmitted ? (
                 <motion.div
@@ -58,53 +58,53 @@ export function ContactSection() {
                   <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Send className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="text-secondary font-medium">Köszönjük!</p>
-                  <p className="text-secondary/60 text-sm mt-1 font-light">Hamarosan válaszolunk.</p>
+                  <p className="text-primary font-bold text-lg">Köszönjük!</p>
+                  <p className="text-foreground/70 text-sm mt-1 font-medium">Hamarosan válaszolunk.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-medium text-secondary mb-1.5 uppercase tracking-wider">Név</label>
+                      <label htmlFor="name" className="block text-xs font-bold text-foreground/80 mb-1.5 uppercase tracking-wider">Név</label>
                       <input
                         type="text"
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-secondary/20 bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all text-sm"
                         placeholder="Hogy hívnak?"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-xs font-medium text-secondary mb-1.5 uppercase tracking-wider">E-mail</label>
+                      <label htmlFor="email" className="block text-xs font-bold text-foreground/80 mb-1.5 uppercase tracking-wider">E-mail</label>
                       <input
                         type="email"
                         id="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-secondary/20 bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all text-sm"
                         placeholder="pelda@email.com"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-xs font-medium text-secondary mb-1.5 uppercase tracking-wider">Üzenet</label>
+                    <label htmlFor="message" className="block text-xs font-bold text-foreground/80 mb-1.5 uppercase tracking-wider">Üzenet</label>
                     <textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none text-sm"
+                      className="w-full px-4 py-3 rounded-xl border border-secondary/20 bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all resize-none text-sm"
                       placeholder="Miben segíthetünk?"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-background font-medium py-4 px-6 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-4 px-6 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2 shadow-md shadow-primary/20"
                   >
                     {isSubmitting ? <span>Küldés...</span> : <><Send className="w-4 h-4" /><span>Üzenet elküldése</span></>}
                   </button>
@@ -120,10 +120,10 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/10 h-full flex flex-col">
-              <div className="p-4 border-b border-secondary/10 flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <p className="text-xs text-secondary/70 font-medium uppercase tracking-widest">
+            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/15 h-full flex flex-col">
+              <div className="p-4 border-b border-secondary/15 flex items-center gap-3 bg-secondary/5">
+                <MapPin className="w-5 h-5 text-secondary shrink-0" />
+                <p className="text-xs text-foreground font-bold uppercase tracking-widest">
                   4400 Nyíregyháza, Derű utca 20.
                 </p>
               </div>

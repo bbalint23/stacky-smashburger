@@ -34,13 +34,13 @@ function FAQItem({ question, answer, isOpen, onClick }: {
   onClick: () => void 
 }) {
   return (
-    <div className="border-b border-secondary/10 last:border-b-0">
+    <div className="border-b border-secondary/15 last:border-b-0">
       <button
         onClick={onClick}
         className="w-full py-5 flex items-center justify-between text-left group"
         aria-expanded={isOpen}
       >
-        <h3 className="text-base font-sans font-medium text-secondary pr-4 group-hover:text-primary transition-colors">
+        <h3 className="text-base font-sans font-bold text-foreground pr-4 group-hover:text-primary transition-colors">
           {question}
         </h3>
         <motion.div
@@ -48,7 +48,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
           transition={{ duration: 0.2 }}
           className="flex-shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-secondary/50 group-hover:text-primary transition-colors" />
+          <ChevronDown className="w-5 h-5 text-secondary group-hover:text-primary transition-colors" />
         </motion.div>
       </button>
       <AnimatePresence>
@@ -60,7 +60,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-secondary/70 font-light leading-relaxed text-sm sm:text-base">
+            <p className="pb-5 text-foreground/80 font-normal leading-relaxed text-sm sm:text-base">
               {answer}
             </p>
           </motion.div>
@@ -73,7 +73,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  // Strukturált adatok a Google számára (SEO szempontból frissítve az új tartalommal)
+  // Strukturált adatok a Google számára
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -105,17 +105,17 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-xl mb-4 border border-secondary/20">
-            <HelpCircle className="w-4 h-4" />
-            <span className="text-sm font-bold tracking-wider uppercase">INFO</span>
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl mb-4 border border-primary/20">
+            <HelpCircle className="w-4 h-4 text-primary" />
+            <span className="text-sm font-bold tracking-wider uppercase text-primary">INFO</span>
           </div>
           <h2 
-            className="text-4xl sm:text-5xl font-black text-secondary tracking-tight"
+            className="text-4xl sm:text-5xl font-black text-primary tracking-tight"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Gyakori Kérdések
           </h2>
-          <p className="mt-4 text-secondary/70 max-w-2xl mx-auto font-light text-base sm:text-lg">
+          <p className="mt-4 text-foreground/80 max-w-2xl mx-auto font-medium text-base sm:text-lg">
             Minden, amit a STACKY étlapjáról, rendelésről, a prémium húsainkról és a kézműves sörválasztékunkról tudni érdemes.
           </p>
         </motion.div>
@@ -126,7 +126,7 @@ export function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white rounded-3xl border border-secondary/10 shadow-2xl shadow-secondary/5 px-6 sm:px-8"
+          className="bg-white rounded-3xl border border-secondary/20 shadow-2xl shadow-secondary/5 px-6 sm:px-8"
         >
           {faqs.map((faq, index) => (
             <FAQItem

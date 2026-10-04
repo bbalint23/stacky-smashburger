@@ -5,9 +5,14 @@ import { MapPin } from "lucide-react"
 import Image from "next/image"
 
 export function Hero() {
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
     e.preventDefault()
+
     const element = document.getElementById(id)
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -17,7 +22,7 @@ export function Hero() {
     <section className="relative min-h-screen bg-background overflow-hidden pt-16 flex items-center">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* BAL OLDAL: SZÖVEGEK */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -25,14 +30,15 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center lg:text-left"
           >
-            {/* BADGE */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary mb-6">
-              <MapPin className="h-3.5 w-3.5" />
+
+            {/* HELYSZÍN */}
+            <div className="inline-flex items-center gap-2 rounded-xl bg-[#007AFF]/55 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white mb-6">
+              <MapPin className="h-3.5 w-3.5 text-white" />
               Nyíregyháza, Derű utca 20.
             </div>
 
             {/* FŐCÍM */}
-            <h1 className="leading-[0.95] text-secondary">
+            <h1 className="leading-[0.95]">
               <span className="text-6xl sm:text-7xl lg:text-8xl font-luckiest uppercase tracking-wide text-primary block">
                 STACKY DELI
               </span>
@@ -42,12 +48,25 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 text-lg sm:text-xl text-secondary/70 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed"
+              className="mt-6 text-lg sm:text-xl text-foreground/80 max-w-lg mx-auto lg:mx-0 font-normal leading-relaxed"
             >
-              Ha szaftos <strong className="font-extrabold text-secondary">ANGUS SMASHBURGER</strong>, 
-              argentin rib-eye <strong className="font-extrabold text-secondary">PHILLY CHEESESTEAK</strong>, 
-              egy csöpögős <strong className="font-extrabold text-secondary">NY CHOPPED CHEESE</strong>, 
-              vagy egy ropogós <strong className="font-extrabold text-secondary">SÜLT BURGONYA</strong> a kívánságod: Nyíregyháza, Derű utca 20.
+              Ha szaftos{" "}
+              <strong className="font-extrabold text-foreground">
+                ANGUS SMASHBURGER
+              </strong>
+              , argentin rib-eye{" "}
+              <strong className="font-extrabold text-foreground">
+                PHILLY CHEESESTEAK
+              </strong>
+              , egy csöpögős{" "}
+              <strong className="font-extrabold text-foreground">
+                NY CHOPPED CHEESE
+              </strong>
+              , vagy egy ropogós{" "}
+              <strong className="font-extrabold text-foreground">
+                SÜLT BURGONYA
+              </strong>{" "}
+              a kívánságod: Nyíregyháza, Derű utca 20.
             </motion.p>
 
             {/* GOMBOK */}
@@ -57,18 +76,20 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
+              {/* ÉTLAP */}
               <a
                 href="#menu"
                 onClick={(e) => scrollToSection(e, "menu")}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#22c55e] px-7 py-4 text-base font-bold text-white shadow-lg shadow-[#22c55e]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#22c55e]/50 active:scale-95 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FF6B00] px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 w-full sm:w-auto"
               >
-                Irány az étlap
+                IRÁNY AZ ÉTLAP
               </a>
 
+              {/* KAPCSOLAT */}
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "contact")}
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-secondary/10 bg-transparent px-7 py-4 text-base font-bold text-secondary transition-all duration-300 hover:-translate-y-1 hover:bg-secondary/5 active:scale-95 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#007AFF]/55 px-8 py-4 text-base font-bold text-[#FFFFFF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FF6B00]/25 active:scale-95 w-full sm:w-auto"
               >
                 Kapcsolat
               </a>
@@ -85,7 +106,7 @@ export function Hero() {
             >
               <Image
                 src="/images/hero-image.png"
-                alt="STACKY STACKY DELI"
+                alt="STACKY DELI"
                 fill
                 className="object-cover lg:object-left"
                 sizes="(max-width: 1024px) 100vw, 50vw"
